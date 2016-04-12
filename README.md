@@ -1,2 +1,0 @@
-# dotFiles
-My personal .file
