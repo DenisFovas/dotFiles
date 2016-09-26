@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -116,7 +116,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Workspace names
-set $workspace1 "1: "
+set $workspace1 "1: "          
 set $workspace2 "2: "         
 set $workspace3 "3: "          
 set $workspace4 "4: "          
@@ -152,11 +152,10 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # pune anumite programe in workspace-urile necesare
+assign [class="Clementine"] $workspace10
 assign [class="Steam"] $workspace3
 assign [class="google-chrome"] $workspace1
 assign [class="Thunderbird"] $workspace8 
-assign [class="qBittorrent"] $workspace6
-assign [class="Firefox"] $workspace1
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -201,7 +200,6 @@ client.urgent           $base02 $base08    $base00 $base0F
 # finds out, if available)
 bar {
         status_command ~/.conkyi3
-        separator_symbol "a:|:a"
         colors {
               separator $base03
               background $base01
@@ -216,17 +214,11 @@ bar {
 
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 
-# Gaps
-gaps inner 10
-gaps outer 1
-
-# Borders
-new_window none
 
 # Pentru a utiliza 'media-player controls' de pe tastatura laptop-ului, este nevoie de 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2% #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
@@ -236,19 +228,22 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightne
 # Touchpad controls
 bindsym XF86TouchpadToggle exec ~/Scripts/toggletouchpad.sh # toggle touchpad
 
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 # Executari la rulari/reporniri ale lui i3
 
-# Utilizeaza un background custom si seteaza rezolutia.
+# Utilizeaza un background custom
 exec_always ~/Scripts/screenResolution.sh
 # feh --bg-scale -> pune imaginea pe tot ecranul in mod 'scale'. Locatia imaginii.
-exec_always feh --bg-scale ~/Poze/RandomPictures/1.jpg
+exec_always feh --bg-scale ~/Poze/RandomPictures/1.png
 
 exec ~/Scripts/runSteam
+#exec_always htop
 exec nm-applet
 exec compton -f
-exec thunderbird
 exec pasystray
 exec cbatticon 
-exec qbittorrent 
-exec i3-msg "$workspace10; exec xfce4-terminal -x cmus;"
-exec i3-msg "$workspace4; exec termite;"

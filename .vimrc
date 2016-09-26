@@ -1,5 +1,6 @@
 set nocompatible " Nu va fi 'vi' comaptibil.
 filetype off	 " Incarcare plugin-uri.
+"
 " Includerea a pathogen in vim.
 execute pathogen#infect()
 filetype plugin indent on
@@ -41,10 +42,12 @@ map! <Esc>[1;2b <Nop>
 " catre editor.
 map j gj
 map k gk
+
 " Detectare limbaj pe baza extensiei.
 filetype plugin indent on 
 set wildmenu " completare vizuala automata.
 set lazyredraw " Rescriere doar cand este cazul
+set wildignore=*.o,*.a,*.out,*.jpg,*.jpeg,*.png,*.gif,*.git,*.bmp
 
 " Afisare
 syntax on
@@ -52,6 +55,8 @@ colorscheme molokai
 set ruler 
 set title
 
+" Mouse disable
+set mouse=c
 " Plugin-uri
 
 " Coloscheme
@@ -71,9 +76,14 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
+" Colors
+let g:cssColorVimDoNotMessMyUpdatetime = 1
+
 " Status line
 set laststatus=2
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler_options = '-Wall -Wextra -Werror -std=c++11'
+let g:syntastic_c_compiler_options = '-Wall -Wextra -Werror -std=c++11'

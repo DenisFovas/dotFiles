@@ -1,0 +1,7 @@
+execute_console 
+
+execute_command vim script-back.js
+AliasCommand 
+.
+delete 
+delete
