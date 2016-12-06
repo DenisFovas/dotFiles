@@ -1,6 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Fold only as i indent the code.
+set foldmethod=indent
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -67,7 +69,11 @@ set backspace=indent,eol,start              " backspace removes all (indents, EO
 set clipboard=unnamed                       " use system clipboard
 set shell=bash\ --login			    " used for resolving some bugs.
 
-
+nnoremap tn	:tabnew<Space>
+nnoremap tk	:tabnext<CR>
+nnoremap tj	:tabprev<CR>
+nnoremap th	:tabfirst<CR>
+nnoremap tl	:tablast<CR>
 
 "" Search settings
 "=====================================================
@@ -78,7 +84,7 @@ set hlsearch	                            " highlight search results
 "" TagBar settings
 "=====================================================
 let g:tagbar_autofocus=0
-let g:tagbar_width=42
+let g:tagbar_width=30
 autocmd BufEnter *.py :call tagbar#autoopen(0)
 autocmd BufWinLeave *.py :TagbarClose
 autocmd BufWinLeave *.c :TagbarClose
@@ -90,7 +96,7 @@ nmap <F8> :TagbarToggle<CR>
 "" NERDTree settings
 "=====================================================
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']     " Ignore files in NERDTree
-let NERDTreeWinSize=40
+let NERDTreeWinSize=25
 autocmd VimEnter * if !argc() | NERDTree | endif  " Load NERDTree only if vim is run without arguments
 nmap " :NERDTreeToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
@@ -147,7 +153,6 @@ let g:pymode_rope_guess_project=0
 let g:pymode_doc=1
 let g:pymode_doc_key='K'
 
-
 " lints
 let g:pymode_lint=0
 
@@ -157,7 +162,6 @@ let g:pymode_virtualenv=1
 " breakpoints
 let g:pymode_breakpoint=1
 let g:pymode_breakpoint_key='<leader>b'
-
 
 " syntax highlight
 let g:pymode_syntax=1
