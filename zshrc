@@ -81,12 +81,25 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
+alias awesomeconfig="vim ~/.config/awesome/rc.lua"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ll="ll -l"
-alias w3m="w3m duckduckgo.com"
-alias ping="ping -c 3 google.com"
+alias lla="ls -al"
+alias la="ls -a"
+alias ping="ping -c 3 "
 alias install="sudo pacman -Sy"
 alias update="sudo pacman -Syyu"
 alias pdf_make="pandoc "
 alias ll="ls -l"
+# Alias for scripts
+alias asc="~/Scripts/asc"
+alias wheather="~/Scripts/wheater.sh"
+
+
+
+# Alias for compiling
+alias compile_c="gcc -g -Wextra -Wall -Werror"
+
+
+# Excution:
+neofetch

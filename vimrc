@@ -34,8 +34,8 @@ Plugin 'MarcWeber/vim-addon-mw-utils'       " dependencies #1
 Plugin 'tomtom/tlib_vim'                    " dependencies #2
 Plugin 'honza/vim-snippets'                 " snippets repo
 
-
 Plugin 'tpope/vim-commentary'               " Comment stuff out
+
 "-------------------=== Python  ===-----------------------------
 Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)
 Plugin 'scrooloose/syntastic'               " Syntax checking plugin for Vim
@@ -55,11 +55,11 @@ set t_Co=256                                " set 256 colors
 colorscheme wombat256mod                    " set color scheme
 set number                                  " show line numbers
 set relativenumber			    " show relative numbers from where the cursor is
-set ruler				    
+set ruler				    " display the ruler
 set cursorline			            " a cursorline for the cursor. Easy to see.
 set ttyfast                                 " terminal acceleration
 set autoindent                              " indent when moving to the next line while writing code
-set cursorline                              " shows line under the cursor's line
+set cursorline                              " shows line where is the cursor's line
 set showmatch                               " shows matching part of bracket pairs (), [], {}
 set enc=utf-8	                            " utf-8 by default
 set nobackup 	                            " no backup files
@@ -69,11 +69,24 @@ set backspace=indent,eol,start              " backspace removes all (indents, EO
 set clipboard=unnamed                       " use system clipboard
 set shell=bash\ --login			    " used for resolving some bugs.
 
+" Using tabs is now easier
 nnoremap tn	:tabnew<Space>
 nnoremap tk	:tabnext<CR>
 nnoremap tj	:tabprev<CR>
 nnoremap th	:tabfirst<CR>
 nnoremap tl	:tablast<CR>
+
+" For better code completion on the paranthesis
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+
+inoremap (      ()<Left>
+inoremap (<CR>  (<CR>)<Esc>O
+inoremap ((     (
+inoremap ()     ()
+
 
 "" Search settings
 "=====================================================
@@ -218,3 +231,20 @@ let g:syntastic_style_error_symbol='X'
 let g:syntastic_warning_symbol='x'
 let g:syntastic_style_warning_symbol='x'
 let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
+
+
+" Custom headers for C languace
+autocmd bufnewfile *.c so ~/.custom_vim/c_cpp_header.txt
+autocmd bufnewfile *.c exe "1," . 10 . "g/File Name :.*/s//File Name : " .expand("%")
+autocmd bufnewfile *.c exe "1," . 10 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
+autocmd Bufwritepre,filewritepre *.c execute "normal ma"
+autocmd Bufwritepre,filewritepre *.c exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
+autocmd bufwritepost,filewritepost *.c execute "normal `a"
+
+" Custom headers for CPP languace
+autocmd bufnewfile *.cpp so ~/.custom_vim/c_cpp_header.txt
+autocmd bufnewfile *.cpp exe "1," . 10 . "g/File Name :.*/s//File Name : " .expand("%")
+autocmd bufnewfile *.cpp exe "1," . 10 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
+autocmd Bufwritepre,filewritepre *.cpp execute "normal ma"
+autocmd Bufwritepre,filewritepre *.cpp exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
+autocmd bufwritepost,filewritepost *.cpp execute "normal `a"
