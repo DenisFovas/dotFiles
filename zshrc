@@ -91,10 +91,11 @@ alias install="sudo pacman -Sy"
 alias update="sudo pacman -Syyu"
 alias pdf_make="pandoc "
 alias ll="ls -l"
+
 # Alias for scripts
 alias asc="~/Scripts/asc"
 alias wheather="~/Scripts/wheater.sh"
-
+alias dot_files="~/Scripts/dotfile-git.sh"
 
 
 # Alias for compiling
