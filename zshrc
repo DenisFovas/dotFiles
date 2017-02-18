@@ -26,7 +26,7 @@ ZSH_THEME="aussiegeek"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -42,7 +42,7 @@ ZSH_THEME="aussiegeek"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd.mm.yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -60,7 +60,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -83,10 +83,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias awesomeconfig="vim ~/.config/awesome/rc.lua"
+alias i3config="vim ~/.config/i3/config"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lla="ls -al"
 alias la="ls -a"
-alias ping="ping -c 3 "
+alias ping="ping -c 3 google.com"
 alias install="sudo pacman -Sy"
 alias update="sudo pacman -Syyu"
 alias pdf_make="pandoc "
@@ -96,6 +97,7 @@ alias ll="ls -l"
 alias asc="~/Scripts/asc"
 alias wheather="~/Scripts/wheater.sh"
 alias dot_files="~/Scripts/dotfile-git.sh"
+alias work="~/Scripts/work.sh"
 
 
 # Alias for compiling
