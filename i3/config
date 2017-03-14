@@ -41,6 +41,7 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec rofi
 
 # change focus
 bindsym $mod+j focus left
@@ -192,6 +193,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 exec pasystray
 exec --no-startup-id blueman-applet
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id nm-aplplet
+exec --no-startup-id nm-applet
 exec geary
 exec conky

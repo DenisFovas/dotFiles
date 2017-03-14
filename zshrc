@@ -90,7 +90,6 @@ alias la="ls -a"
 alias ping="ping -c 3 google.com"
 alias install="sudo pacman -Sy"
 alias update="sudo pacman -Syyu"
-alias pdf_make="pandoc "
 alias ll="ls -l"
 
 # Alias for scripts
@@ -98,6 +97,7 @@ alias asc="~/Scripts/asc"
 alias wheather="~/Scripts/wheater.sh"
 alias dot_files="~/Scripts/dotfile-git.sh"
 alias work="~/Scripts/work.sh"
+alias pdf_make="~/Scripts/pdfmake.sh "
 
 
 # Alias for compiling

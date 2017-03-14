@@ -68,6 +68,7 @@ set noswapfile 	                            " no swap files
 set backspace=indent,eol,start              " backspace removes all (indents, EOLs, start) What is start?
 set clipboard=unnamed                       " use system clipboard
 set shell=bash\ --login			    " used for resolving some bugs.
+set tabstop=4				    " makes tab stop at 4 'spaces'
 
 " Using tabs is now easier
 nnoremap tn	:tabnew<Space>

@@ -8,3 +8,4 @@ cd ~/Documents/git/dotFiles/
 
 git add -A
 git commit
+git push
