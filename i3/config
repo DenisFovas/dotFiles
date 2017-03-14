@@ -49,6 +49,9 @@ bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
+# Lock the screen using i3lock. Possible to change it, because white is too bright
+bindsym $mod+Shift+x exec i3lock -t -i /home/denis/Pictures/15_stages.jpg
+
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
