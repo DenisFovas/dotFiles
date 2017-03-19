@@ -98,6 +98,7 @@ alias asc="~/Scripts/asc"
 alias wheather="~/Scripts/wheater.sh"
 alias dot_files="~/Scripts/dotfile-git.sh"
 alias work="~/Scripts/work.sh"
+alias collegeWork="~/Scripts/collegeWork"
 alias pdf_make="~/Scripts/pdfmake.sh "
 
 

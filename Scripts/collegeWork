@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# If the files are not in a folder already, then we create the folder.
+if [ ! ~/Documents/git/CollegeWork/$2 ]
+then
+	mkdir ~/Documents/git/CollegeWork/$2
+fi
+
+# Copy the files from the path into the second folder.
+cp -r $1 ~/Documents/git/CollegeWork/$2
+
+
+cd ~/Documents/git/CollegeWork/
+
+# Add them to the repository
+git add $2/
+git commit
+git push
