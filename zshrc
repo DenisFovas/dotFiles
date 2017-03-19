@@ -91,6 +91,7 @@ alias ping="ping -c 3 google.com"
 alias install="sudo pacman -Sy"
 alias update="sudo pacman -Syyu"
 alias ll="ls -l"
+alias clion="~/Documents/Books/clion-2016.3.3/bin/clion.sh"
 
 # Alias for scripts
 alias asc="~/Scripts/asc"
@@ -98,10 +99,6 @@ alias wheather="~/Scripts/wheater.sh"
 alias dot_files="~/Scripts/dotfile-git.sh"
 alias work="~/Scripts/work.sh"
 alias pdf_make="~/Scripts/pdfmake.sh "
-
-
-# Alias for compiling
-alias compile_c="gcc -g -Wextra -Wall -Werror"
 
 
 # Excution:

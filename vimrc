@@ -54,9 +54,9 @@ syntax enable                               " syntax highlight
 set t_Co=256                                " set 256 colors
 colorscheme wombat256mod                    " set color scheme
 set number                                  " show line numbers
-set relativenumber			    " show relative numbers from where the cursor is
-set ruler				    " display the ruler
-set cursorline			            " a cursorline for the cursor. Easy to see.
+set relativenumber			    			" show relative numbers from where the cursor is
+set ruler				    				" display the ruler
+set cursorline			            		" a cursorline for the cursor. Easy to see.
 set ttyfast                                 " terminal acceleration
 set autoindent                              " indent when moving to the next line while writing code
 set cursorline                              " shows line where is the cursor's line
@@ -67,8 +67,8 @@ set nowritebackup                           " only in case you don't want a back
 set noswapfile 	                            " no swap files
 set backspace=indent,eol,start              " backspace removes all (indents, EOLs, start) What is start?
 set clipboard=unnamed                       " use system clipboard
-set shell=bash\ --login			    " used for resolving some bugs.
-set tabstop=4				    " makes tab stop at 4 'spaces'
+set shell=bash\ --login			    		" used for resolving some bugs.
+set tabstop=4				    			" makes tab stop at 4 'spaces'
 
 " Using tabs is now easier
 nnoremap tn	:tabnew<Space>
