@@ -249,3 +249,4 @@ autocmd bufnewfile *.cpp exe "1," . 10 . "g/Creation Date :.*/s//Creation Date :
 autocmd Bufwritepre,filewritepre *.cpp execute "normal ma"
 autocmd Bufwritepre,filewritepre *.cpp exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
 autocmd bufwritepost,filewritepost *.cpp execute "normal `a"
+
