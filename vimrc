@@ -29,11 +29,11 @@ Plugin 'tpope/vim-surround'                 " Parentheses, brackets, quotes, XML
 Plugin 'flazz/vim-colorschemes'             " Colorschemes
 
 "-------------------=== Snippets support ===--------------------
+Plugin 'wincent/YouCompleteMe'				" You comeplete me package for code autocompletion
 Plugin 'garbas/vim-snipmate'                " Snippets manager
 Plugin 'MarcWeber/vim-addon-mw-utils'       " dependencies #1
 Plugin 'tomtom/tlib_vim'                    " dependencies #2
 Plugin 'honza/vim-snippets'                 " snippets repo
-Plugin 'Valloric/YouCompleteMe'				" Code Autocomplite
 Plugin 'tpope/vim-commentary'               " Comment stuff out
 
 "-------------------=== Python  ===-----------------------------
@@ -233,19 +233,8 @@ let g:syntastic_warning_symbol='x'
 let g:syntastic_style_warning_symbol='x'
 let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
 
+autocmd BufNewFile *.cpp r ~/.custom_vim/c_cpp_header.txt
+autocmd BufNewFile *.c r ~/.custom_vim/c_cpp_header.txt
+autocmd BufNewFile *.h r ~/.custom_vim/c_cpp_header.txt
+autocmd BufNewFile *.js r ~/.custom_vim/c_cpp_header.txt
 
-" Custom headers for C languace
-autocmd bufnewfile *.c so ~/.custom_vim/c_cpp_header.txt
-autocmd bufnewfile *.c exe "1," . 10 . "g/File Name :.*/s//File Name : " .expand("%")
-autocmd bufnewfile *.c exe "1," . 10 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
-autocmd Bufwritepre,filewritepre *.c execute "normal ma"
-autocmd Bufwritepre,filewritepre *.c exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
-autocmd bufwritepost,filewritepost *.c execute "normal `a"
-
-" Custom headers for CPP languace
-autocmd bufnewfile *.cpp so ~/.custom_vim/c_cpp_header.txt
-autocmd bufnewfile *.cpp exe "1," . 10 . "g/File Name :.*/s//File Name : " .expand("%")
-autocmd bufnewfile *.cpp exe "1," . 10 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
-autocmd Bufwritepre,filewritepre *.cpp execute "normal ma"
-autocmd Bufwritepre,filewritepre *.cpp exe "1," . 10 . "g/Last Modified :.*/s/Last Modified :.*/Last Modified : " .strftime("%c")
-autocmd bufwritepost,filewritepost *.cpp execute "normal `a"

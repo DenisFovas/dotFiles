@@ -105,3 +105,5 @@ alias pdf_make="~/Scripts/pdfmake.sh "
 # Excution:
 neofetch
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
