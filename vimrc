@@ -77,6 +77,9 @@ nnoremap tj	:tabprev<CR>
 nnoremap th	:tabfirst<CR>
 nnoremap tl	:tablast<CR>
 
+" Easy refactoring
+nnoremap c* *Ncgn
+
 " For better code completion on the paranthesis
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
