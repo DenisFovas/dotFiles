@@ -80,22 +80,20 @@ export LANG=en_US.UTF-8
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias awesomeconfig="vim ~/.config/awesome/rc.lua"
 alias i3config="vim ~/.config/i3/config"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias lla="ls -al"
+alias ll="ls -l"
 alias la="ls -a"
 alias ping="ping -c 3 google.com"
-alias install="sudo pacman -Sy"
+alias install="sudo pacman -S"
 alias update="sudo pacman -Syyu"
-alias ll="ls -l"
-alias clion="~/Documents/Books/clion-2016.3.3/bin/clion.sh"
+alias w3m="w3m duckduckgo.com -graph -coockie -num"
 
 # Alias for scripts
-alias asc="~/Scripts/asc"
-alias wheather="~/Scripts/wheater.sh"
+alias weather="~/Scripts/wheater.sh"
 alias dot_files="~/Scripts/dotfile-git.sh"
 alias work="~/Scripts/work.sh"
 alias collegeWork="~/Scripts/collegeWork"

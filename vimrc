@@ -42,7 +42,7 @@ Plugin 'scrooloose/syntastic'               " Syntax checking plugin for Vim
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin on	     " Required
+filetype plugin on	     	 " Required
 filetype plugin indent on    " required
 
 
@@ -77,7 +77,8 @@ nnoremap tj	:tabprev<CR>
 nnoremap th	:tabfirst<CR>
 nnoremap tl	:tablast<CR>
 
-" Easy refactoring
+" Easy refactoring. It will change the current word, then on dot  ( . ), it
+" will change the next value.
 nnoremap c* *Ncgn
 
 " For better code completion on the paranthesis
@@ -90,6 +91,12 @@ inoremap (      ()<Left>
 inoremap (<CR>  (<CR>)<Esc>O
 inoremap ((     (
 inoremap ()     ()
+
+inoremap [      []<Left>
+inoremap [<CR>  [<CR>]<Esc>O
+inoremap [[     ]
+inoremap []     []
+
 
 
 "" Search settings
@@ -121,6 +128,7 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd w
+" Will close the nerd tree if he is the last buffer open
 function! s:CloseIfOnlyControlWinLeft()
  	if winnr("$") != 1
 		return
@@ -130,6 +138,7 @@ function! s:CloseIfOnlyControlWinLeft()
 		q
 	endif
 endfunction
+" Will close the nerd tree if he is the last buffer open
 augroup CloseIfOnlyControlWinLeft
 	au!
 	au BufEnter * call s:CloseIfOnlyControlWinLeft()
@@ -148,10 +157,6 @@ let g:riv_disable_folding=1
 "=====================================================
 "" Python settings
 "=====================================================
-
-" omnicomplete
-set completeopt-=preview                    " remove omnicompletion dropdown
-
 " python executables for different plugins
 let g:pymode_python='python'
 let g:syntastic_python_python_exec='python'
@@ -210,10 +215,7 @@ augroup END
 
 " code folding
 let g:pymode_folding=0
-
-" pep8 indents
-let g:pymode_indent=1
-
+"
 " code running
 let g:pymode_run=1
 let g:pymode_run_bind='<F5>'
@@ -230,8 +232,8 @@ let g:syntastic_enable_signs=1
 let g:syntastic_check_on_wq=0
 let g:syntastic_aggregate_errors=1
 let g:syntastic_loc_list_height=5
-let g:syntastic_error_symbol='X'
-let g:syntastic_style_error_symbol='X'
+let g:syntastic_error_symbol='>'
+let g:syntastic_style_error_symbol='>'
 let g:syntastic_warning_symbol='x'
 let g:syntastic_style_warning_symbol='x'
 let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python']
