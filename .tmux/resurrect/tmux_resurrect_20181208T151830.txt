@@ -1,0 +1,10 @@
+pane	0	1	:htop	0	:	1	:/home/denis	1	htop	:usr/share/jetbrains-toolbox/jetbrains-toolbox
+htop
+pane	0	2	:Symfony Learning	0	:	1	:/home/denis/Documents/git-code/symfony-project	1	zsh	:
+pane	0	3	:College Work	1	:*M	1	:/home/denis/Documents/git-code/college/crud-project-DenisFovas/non-native/book_content_reminder	1	zsh	:
+pane	0	4	:zsh	0	:-	1	:/home/denis	1	zsh	:
+window	0	1	0	:	cebe,194x48,0,0,1
+window	0	2	0	:	cebf,194x48,0,0,2
+window	0	3	1	:*M	cec0,194x48,0,0,3
+window	0	4	0	:-	cec1,194x48,0,0,4
+state	0	

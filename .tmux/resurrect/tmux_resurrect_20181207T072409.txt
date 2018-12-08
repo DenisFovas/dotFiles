@@ -1,0 +1,5 @@
+pane	0	1	:htop	0	:-	1	:/home/denis	1	htop	:htop
+pane	0	2	:Symfony Learning	1	:*	1	:/home/denis/Documents/git-code/symfony-project	1	zsh	:
+window	0	1	0	:-	cebd,194x48,0,0,0
+window	0	2	1	:*	cebe,194x48,0,0,1
+state	0	
